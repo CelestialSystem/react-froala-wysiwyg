@@ -44,12 +44,12 @@ jobs:
           fetch-depth: 0
  
 
-      - name: Read version from bower.json
+      - name: Read version from package.json
         run: |
-          VERSION=$(jq -r '.version' ./Examples/bower.json)
+          VERSION=$(jq -r '.version' package.json)
       
           if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
-            echo "Failed to determine version from bower.json"
+            echo "Failed to determine version from package.json"
             exit 1
           fi
       
