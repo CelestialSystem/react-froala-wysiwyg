@@ -70,7 +70,7 @@ jobs:
      - name: Update package.json
        run: |
          jq --arg VERSION "$VERSION" '.version = $VERSION' package.json > tmp.json
-         mv tmp.json ./Examples/bower.json
+         mv tmp.json package.json
          
      - name: Commit changes
        run: |
