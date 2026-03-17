@@ -69,7 +69,7 @@ jobs:
          
      - name: Update package.json
        run: |
-         jq --arg VERSION "$VERSION" '.version = $VERSION' | .dependencies["froala-editor"] = $version package.json > tmp.json
+         jq --arg VERSION "$VERSION" '.version = $VERSION | .dependencies["froala-editor"] = $version' package.json > tmp.json
          mv tmp.json package.json
          
      - name: Commit changes
